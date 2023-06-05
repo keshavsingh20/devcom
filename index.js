@@ -39,7 +39,7 @@ connect()
         // console.log("Server is running at ", port);
         console.log(`Server connected to http://localhost:${port}`);
       });
-      console.log(server)
+
 
       // const io = socket(server, {
       //   cors:{
