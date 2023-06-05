@@ -9,8 +9,8 @@ import postRouter from './router/PostRouter.js'
 import messageRouter from './router/MessageRouter.js'
 import cors from 'cors';
 import { Server } from "socket.io";
-const path = require('path')
-// import * as path from 'path'
+// const path = require('path')
+import * as path from 'path'
 
 const app = express();
 dotenv.config();
