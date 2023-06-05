@@ -1,14 +1,12 @@
 {
-  "name": "backend",
+  "name": "devcom",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node ./index.js",
-    "server": "nodemon serevr.js",
-     "client":"npm start --prefix ./client ",
-     "dev": "concurrently \"npm start\" \"npm run client\""
+   "start": "node ./index.js",
+    "dev": "nodemon ./index.js"
   },
   "keywords": [],
   "author": "",
