@@ -22,10 +22,12 @@ app.use("/api/post", postRouter)
 app.use("/api/message", messageRouter)
 
 // static files
-app.use(express.static(path.join(__dirname, './client/build')))
-app.get('*', function(req, res){
-  res.sendFile(path.join(__dirname, './client/build/index.html' ))
-})
+// app.use(express.static(path.join(__dirname, './client/build')))
+// app.get('*', function(req, res){
+//   res.sendFile(path.join(__dirname, './client/build/index.html' ))
+// })
+app.use(express.static('./client/build')
+
 
 const port = 5000;
 
