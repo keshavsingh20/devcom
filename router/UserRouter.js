@@ -54,12 +54,12 @@ router.post("/create/user",
       }, JWTSEC);
 
       // const OTP = generateOTP();
-      const verificationToken = await VerificationToken.create({
-        user: user._id,
-        token: OTP
-      });
+      // const verificationToken = await VerificationToken.create({
+      //   user: user._id,
+      //   token: OTP
+      // });
 
-      verificationToken.save();
+      // verificationToken.save();
       await user.save();
       // const transport = nodemailer.createTransport({
       //   host: "sandbox.smtp.mailtrap.io",
