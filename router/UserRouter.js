@@ -53,7 +53,7 @@ router.post("/create/user",
         username: user.username,
       }, JWTSEC);
 
-      const OTP = generateOTP();
+      // const OTP = generateOTP();
       const verificationToken = await VerificationToken.create({
         user: user._id,
         token: OTP
@@ -61,24 +61,24 @@ router.post("/create/user",
 
       verificationToken.save();
       await user.save();
-      const transport = nodemailer.createTransport({
-        host: "sandbox.smtp.mailtrap.io",
-        port: 2525,
-        auth: {
-          user: process.env.USER,
-          pass: process.env.PASS
-        }
-      });
+      // const transport = nodemailer.createTransport({
+      //   host: "sandbox.smtp.mailtrap.io",
+      //   port: 2525,
+      //   auth: {
+      //     user: process.env.USER,
+      //     pass: process.env.PASS
+      //   }
+      // });
 
-      transport.sendMail({
-        from: "devcom@gmail.com",
-        to: user.email,
-        subject: "Verify Your Email Using OTP",
-        html: `<h1>Your OTP CODE ${OTP} </h1>`
-      })
+      // transport.sendMail({
+      //   from: "devcom@gmail.com",
+      //   to: user.email,
+      //   subject: "Verify Your Email Using OTP",
+      //   html: `<h1>Your OTP CODE ${OTP} </h1>`
+      // })
 
-      // res.status(200).json({ user, accessToken });
-      res.status(200).json({ status: "Pending", msg: "Please check your email", user: user._id });
+      res.status(200).json({ user, accessToken });
+      // res.status(200).json({ status: "Pending", msg: "Please check your email", user: user._id });
     } catch (error) {
       console.log(error)
       return res.status(400).json("Internal error occured");
