@@ -229,7 +229,7 @@ router.post("/forgot/password", async (req, res) => {
     from: "devcom@gmail.com",
     to: user.email,
     subject: "Reset Token",
-    html: `http://devcom.onrender.com/reset/password?token=${RandomTxt}&_id=${user._id}`
+    html: `https://devcom.onrender.com/reset/password?token=${RandomTxt}&_id=${user._id}`
   })
 
   return res.status(200).json("Check Your email to reset password...!")
