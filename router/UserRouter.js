@@ -61,9 +61,17 @@ router.post("/create/user",
 
       verificationToken.save();
       await user.save();
+      // const transport = nodemailer.createTransport({
+      //   host: "sandbox.smtp.mailtrap.io",
+      //   port: 2525,
+      //   auth: {
+      //     user: process.env.USER,
+      //     pass: process.env.PASS
+      //   }
+      // });
       const transport = nodemailer.createTransport({
-        host: "sandbox.smtp.mailtrap.io",
-        port: 2525,
+        host: "smtp-relay.sendinblue.com",
+        port: 587,
         auth: {
           user: process.env.USER,
           pass: process.env.PASS
@@ -115,9 +123,17 @@ router.post("/verify/email", async (req, res) => {
 
   const { password, ...other } = mainUser._doc;
 
+  // const transport = nodemailer.createTransport({
+  //   host: "sandbox.smtp.mailtrap.io",
+  //   port: 2525,
+  //   auth: {
+  //     user: process.env.USER,
+  //     pass: process.env.PASS
+  //   }
+  // });
   const transport = nodemailer.createTransport({
-    host: "sandbox.smtp.mailtrap.io",
-    port: 2525,
+    host: "smtp-relay.sendinblue.com",
+    port: 587,
     auth: {
       user: process.env.USER,
       pass: process.env.PASS
@@ -193,9 +209,17 @@ router.post("/forgot/password", async (req, res) => {
   })
   await resetToken.save();
 
+  // const transport = nodemailer.createTransport({
+  //   host: "sandbox.smtp.mailtrap.io",
+  //   port: 2525,
+  //   auth: {
+  //     user: process.env.USER,
+  //     pass: process.env.PASS
+  //   }
+  // });
   const transport = nodemailer.createTransport({
-    host: "sandbox.smtp.mailtrap.io",
-    port: 2525,
+    host: "smtp-relay.sendinblue.com",
+    port: 587,
     auth: {
       user: process.env.USER,
       pass: process.env.PASS
